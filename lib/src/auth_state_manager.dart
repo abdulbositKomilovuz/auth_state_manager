@@ -97,7 +97,7 @@ class AuthStateManager {
       _preferences != null && _authStateController != null,
       throw UnInitializedState(),
     );
-    _preferences!.clear();
+    _preferences!.remove(_authStateToken);
     _authStateController!.sink.add(isAuthenticated);
   }
 
