@@ -1,6 +1,6 @@
 name: auth_state_manager
 description: This package helps you to monitor auth statuses in your app.
-version: 0.1.1
+version: 0.1.2
 homepage: https://github.com/abdulbositKomilovuz/auth_state_manager.git
 
 environment:

@@ -74,7 +74,7 @@ class AuthStateManager {
       _preferences != null && _authStateController != null,
       throw UnInitializedState(),
     );
-    return _preferences!.setString(_authStateToken, token);
+    return await _preferences!.setString(_authStateToken, token);
   }
 
   /// Changes to state of auth to Authenticated.
@@ -92,12 +92,12 @@ class AuthStateManager {
   }
 
   /// Clears the state, removes all tokens and resets the state to UnAuthenticated.
-  void logOut() {
+  void logOut() async {
     assert(
       _preferences != null && _authStateController != null,
       throw UnInitializedState(),
     );
-    _preferences!.remove(_authStateToken);
+    await _preferences!.remove(_authStateToken);
     _authStateController!.sink.add(isAuthenticated);
   }
 
